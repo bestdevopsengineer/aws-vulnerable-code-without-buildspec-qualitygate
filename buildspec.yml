@@ -1,14 +1,14 @@
 version: 0.2
 env:
     secrets-manager:
-      TOKEN: firstSecret:tokenForSonar
+      TOKEN: FirstSecret:tokenforsonar
 phases:
   install:
     runtime-versions:
       java: latest
   build:
     commands:
-      - mvn verify sonar:sonar -Dsonar.projectKey=javaprojectaws -Dsonar.organization=javaprojectaws -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$TOKEN 
+      - mvn verify sonar:sonar -Dsonar.projectKey=awsjou  -Dsonar.organization=awsjou  -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=$TOKEN 
       - sleep 5
       - |- 
         quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=javaprojectaws | jq -r '.projectStatus.status')
