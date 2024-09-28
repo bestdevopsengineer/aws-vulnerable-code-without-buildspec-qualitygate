@@ -16,6 +16,7 @@
 #         if [ $quality_status = "ERROR" ] ; then exit 1;fi
 
 
+
 version: 0.2
 phases:
   build:
